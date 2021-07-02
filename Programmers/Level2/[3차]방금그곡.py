@@ -85,3 +85,29 @@ def solution(m, musicinfos):
             length = len(music[1])
     
     return answer
+
+
+'''
+다른 사람 풀이
+
+def shap_to_lower(s): #치환 함수,
+    s = s.replace('C#','c').replace('D#','d').replace('F#','f').replace('G#','g').replace('A#','a')
+    return s
+
+def solution(m,musicinfos):
+    answer=[0,'(None)']   # time_len, title
+    m = shap_to_lower(m)
+    
+    for info in musicinfos:
+        split_info = info.split(',') #스플라이싱,
+        time_length = (int(split_info[1][:2])-int(split_info[0][:2]))*60+int(split_info[1][-2:])-int(split_info[0][-2:]) #minute 저장
+        title = split_info[2]
+        part_notes = shap_to_lower(split_info[-1])
+        
+        full_notes = part_notes*(time_length//len(part_notes))+part_notes[:time_length%len(part_notes)] #part_note를 time_lenght에 맞게 반복
+        
+        if m in full_notes and time_length>answer[0]: # full_note에 존재하고, 길이가 최대이면 answer 갱신
+            answer=[time_length,title]
+    return answer[-1]
+
+'''
