@@ -107,3 +107,25 @@ def solution(msg):
         
         
     return answer
+
+'''
+다른 사람 풀이
+def solution(msg):
+    answer = []
+    tmp = {chr(e + 64): e for e in range(1, 27)}  #사전 초기화,
+    num = 27                                      #사전 index,
+    
+    while msg:
+        tt = 1                                    #msg 접근 index
+        
+        while msg[:tt] in tmp.keys() and tt <= msg.__len__():   #key값 존재여부와, msg의 length 조건 동시 체크,
+            tt += 1
+        tt -= 1
+        if msg[:tt] in tmp.keys():                              
+            answer.append(tmp[msg[:tt]])
+            tmp[msg[:tt + 1]] = num
+            num += 1
+        msg = msg[tt:]
+    return answer
+
+'''
