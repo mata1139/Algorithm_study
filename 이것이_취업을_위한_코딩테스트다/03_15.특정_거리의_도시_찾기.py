@@ -21,7 +21,7 @@ while que:                         # 큐에 원소가 존재 할 동안,
     
     for road in MAP[now]:          # 해당 지점의 길을 조사,
         
-        if visited[road] == False: # 방문한 적이 없는 곳이라면,
+        if visited[road] == 0: # 방문한 적이 없는 곳이라면,
             visited[road] = visited[now] + 1 # 현재 지점까지의 거리 + 1  
             que.append(road)       # 큐에 해당 지점 추가,
 
